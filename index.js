@@ -10,3 +10,8 @@ import {dirname, join } from "node:path"
 
 import { Server } from "socket.io";
 
+//2. instances
+const app = express();
+const server = http.createServer(app);
+const io = new Server(server);
+ 
