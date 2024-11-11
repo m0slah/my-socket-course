@@ -21,6 +21,10 @@ const io = new Server(server);
 const __dirname = dirname(fileURLToPath(import.meta.url));
 app.get("/", (req, res) => res.sendFile(join(__dirname, "index.html")));
 
+// 4. define a connection event handler
+io.on("connection", (socket) => {
+  console.log("a new client connected✅");
+});
 // 5. Start the Server
 const PORT = 3000;
 server.listen(PORT, () => {
