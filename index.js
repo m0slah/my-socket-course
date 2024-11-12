@@ -26,7 +26,7 @@ io.on("connection", (client) => {
   console.log("a new client connected✅");
 
   client.on("disconnect", () => {
-    console.log("Client disconnected");
+    console.log("Client disconnected❌");
   });
 });
 // 5. Start the Server
