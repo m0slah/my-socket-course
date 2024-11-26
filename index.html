@@ -15,10 +15,10 @@
 
       socket.on("connect", () => {
         console.log("Connected to the Client");
+      });
 
-        setTimeout(() => {
-          socket.disconnect();
-        }, 5000);
+      socket.on("message", (message) => {
+        console.log(message);
       });
 
       socket.on("disconnect", () => {
