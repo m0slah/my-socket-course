@@ -25,7 +25,9 @@ app.get("/", (req, res) => res.sendFile(join(__dirname, "index.html")));
 io.on("connection", (client) => {
   console.log("a new client connected✅");
 
-  client.emit("message", "welcome to the server");
+  client.on("new message", (message) => {
+    console.log(message);
+  });
 
   client.on("disconnect", () => {
     console.log("Client disconnected❌");
